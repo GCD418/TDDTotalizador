@@ -1,7 +1,8 @@
 import Totalizador from "./totalizador.js";
 
-describe("Sumar", () => {
-  it("deberia sumar dos numeros", () => {
-    expect(sumar(3, 2)).toEqual(5);
+describe("Totalizador", () => {
+  it("Debería retornar la cantidad de ítems", () => {
+    const totalizador = new Totalizador(3);
+    expect(totalizador.obtenerCantidadDeItems).toEqual(3);
   });
 });

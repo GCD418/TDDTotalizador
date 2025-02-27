@@ -2,7 +2,8 @@ class Totalizador{
     constructor(cantidadDeItem){
         this.cantidadDeItem = cantidadDeItem;
     }
-    get cantidadDeItems(){
+    get obtenerCantidadDeItems(){
         return this.cantidadDeItem;
     }
 }
+export default Totalizador;
