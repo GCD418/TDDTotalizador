@@ -1,7 +1,7 @@
-// import Totalizador from "./totalizador.js";
+import Totalizador from "./totalizador.js";
 
 const cantidadDeItem = document.querySelector("#cantidad-de-item");
-// const second = document.querySelector("#segundo-numero");
+const precioDeItem = document.querySelector("#precio-de-item");
 const form = document.querySelector("#sumar-form");
 const div = document.querySelector("#resultado-div");
 
@@ -9,8 +9,12 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   
   const cantidadDeItems = Number.parseInt(cantidadDeItem.value);
-  //const totalizador = new Totalizador(cantidadDeItems);
-  // const secondNumber = Number.parseInt(second.value);
+  const precioDeItems = Number.parseInt(precioDeItem.value);
 
-  div.innerHTML = "<p>" + cantidadDeItems + "</p>";
+  const totalizador = new Totalizador(cantidadDeItems, precioDeItems);
+
+
+  // div.innerHTML = "<p>" + cantidadDeItems + " " + precioDeItems + "</p>";
+  div.innerHTML = `<p>Cantidad: ${totalizador.cantidadDeItems}</p>`;
+  div.innerHTML += `<p>Precio: ${totalizador.precioDeItems}</p>`;
 });
