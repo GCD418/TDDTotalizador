@@ -14,6 +14,7 @@ form.addEventListener("submit", (event) => {
   const totalizador = new Totalizador(cantidadDeItems, precioDeItems);
 
 
-  div.innerHTML = `<p>Cantidad: ${totalizador.cantidadDeItems}</p>`;
-  div.innerHTML += `<p>Precio: ${totalizador.precioDeItems}</p>`;
+  //div.innerHTML = `<p>Cantidad: ${totalizador.cantidadDeItems}</p>`;
+  //div.innerHTML += `<p>Precio: ${totalizador.precioDeItems}</p>`;
+  div.innerHTML = `<p>Precio neto(${totalizador.cantidadDeItems}*\$${totalizador.precioDeItems}): ${totalizador.getPrecioNeto}</p>`;
 });
