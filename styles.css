@@ -1,0 +1,22 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px;
+}
+
+select,
+input {
+    padding: 5px;
+    margin: 5px 0;
+}
+
+#sumar-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
