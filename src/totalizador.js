@@ -1,7 +1,7 @@
 class Totalizador {
 
     //precioNeto = null;
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado) {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
         if (typeof codigoDeEstado === 'string') {

@@ -18,6 +18,6 @@ describe("Totalizador", () => {
 
   it("Debería retornar el precio neto", () => {
     const totalizador = new Totalizador(3, 100); 
-    expect(totalizador.getPrecioNeto).toEqual(300); 
+    expect(totalizador.precioNeto).toEqual(300); 
   });
 });
