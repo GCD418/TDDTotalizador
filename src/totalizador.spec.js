@@ -20,4 +20,10 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(3, 100); 
     expect(totalizador.precioNeto).toEqual(300); 
   });
+
+  it("Debería retornar el impuesto de acuerdo al código de estado", () => {
+    const totalizador = new Totalizador(3, 100, "UT"); 
+    expect(totalizador.impuesto).toEqual(0.0665); 
+  });
+
 });
