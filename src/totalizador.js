@@ -2,11 +2,11 @@ class Totalizador {
 
     //precioNeto = null;
     tasaImpuestos = {
-        UT: 0.0665,
-        NV: 0.08,
-        TX: 0.0625,
-        AL: 0.04,
-        CA: 0.0825,
+        UT: 6.65,
+        NV: 8.0,
+        TX: 6.25,
+        AL: 4.0,
+        CA: 8.25,
     }
     constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
         this.cantidadDeItem = cantidadDeItem;
