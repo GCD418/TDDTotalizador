@@ -25,6 +25,7 @@ form.addEventListener("submit", (event) => {
     <p>Cantidad: ${totalizador.cantidadDeItems}</p>
     <p>Precio: ${totalizador.precioDeItems}</p>
     <p>Código de Estado seleccionado: ${totalizador.codigoDeEstado}</p>
+    <p>Impuesto para ${totalizador.codigoDeEstado} = (%${totalizador.impuesto})</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
 `;
 });
