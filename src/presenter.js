@@ -11,8 +11,12 @@ form.addEventListener("submit", (event) => {
   
   const cantidadDeItems = Number.parseInt(cantidadDeItem.value);
   const precioDeItems = Number.parseInt(precioDeItem.value);
-  const codigoEstadoValor = codigoDeEstado.value.toUpperCase().slice(0, 2);
+  const codigoDeEstado = document.getElementById('codigo-de-estado').value;
 
+  /*if (codigoDeEstado === "") {
+    alert("Por favor, selecciona un estado.");
+    return;
+  }*/
 
   const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoEstadoValor);
 
