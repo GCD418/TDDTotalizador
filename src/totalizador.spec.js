@@ -11,6 +11,11 @@ describe("Totalizador", () => {
     expect(totalizador.precioDeItem).toEqual(100); 
   });
 
+  it("Debería retornar el código de estado en mayúsculas y con 2 caracteres", () => {
+    const totalizador = new Totalizador(3, 100, "ny"); 
+    expect(totalizador.codigoDeEstado).toEqual("NY");
+  });
+
   it("Debería retornar el precio neto", () => {
     const totalizador = new Totalizador(3, 100); 
     expect(totalizador.getPrecioNeto).toEqual(300); 

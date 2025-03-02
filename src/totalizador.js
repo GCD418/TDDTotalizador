@@ -1,9 +1,16 @@
 class Totalizador {
 
-    precioNeto = null;
-    constructor(cantidadDeItem, precioDeItem) {
+    //precioNeto = null;
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
+        if (typeof codigoDeEstado === 'string') {
+            this._codigoDeEstado = codigoDeEstado.toUpperCase().slice(0, 2);
+        } else {
+            this._codigoDeEstado = 'XX';
+        }
+        this._precioNeto = null;
+      
     }
 
     get cantidadDeItems() {
@@ -14,13 +21,17 @@ class Totalizador {
         return this.precioDeItem;
     }
 
-    get getPrecioNeto() {
-        return this.precioNeto ?? this.calcularPrecioNeto();
+    get codigoDeEstado() {
+        return this._codigoDeEstado;
+    }
+
+    get precioNeto() {
+        return this._precioNeto ?? this.calcularPrecioNeto();
     }
 
     calcularPrecioNeto() {
-        this.precioNeto = this.cantidadDeItem * this.precioDeItem;
-        return this.precioNeto;
+        this._precioNeto = this.cantidadDeItem * this.precioDeItem;
+        return this._precioNeto;
     }
 }
 
