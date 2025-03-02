@@ -2,7 +2,7 @@ import Totalizador from "./totalizador.js";
 
 const cantidadDeItem = document.querySelector("#cantidad-de-item");
 const precioDeItem = document.querySelector("#precio-de-item");
-const codigoDeEstado = document.querySelector("#codigo-de-estado")
+const _codigoDeEstado = document.querySelector("#codigo-de-estado")
 const form = document.querySelector("#sumar-form");
 const div = document.querySelector("#resultado-div");
 
@@ -11,20 +11,20 @@ form.addEventListener("submit", (event) => {
   
   const cantidadDeItems = Number.parseInt(cantidadDeItem.value);
   const precioDeItems = Number.parseInt(precioDeItem.value);
-  const codigoDeEstado = document.getElementById('codigo-de-estado').value;
+  const codigoDeEstado = _codigoDeEstado.value;
 
   /*if (codigoDeEstado === "") {
     alert("Por favor, selecciona un estado.");
     return;
   }*/
 
-  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoEstadoValor);
+  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado);
 
 
   div.innerHTML = `
     <p>Cantidad: ${totalizador.cantidadDeItems}</p>
     <p>Precio: ${totalizador.precioDeItems}</p>
-    <p>Código de Estado: ${totalizador.codigoDeEstado}</p>
+    <p>Código de Estado seleccionado: ${totalizador.codigoDeEstado}</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
 `;
 });
