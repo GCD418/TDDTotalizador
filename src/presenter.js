@@ -3,7 +3,7 @@ import Totalizador from "./totalizador.js";
 const cantidadDeItem = document.querySelector("#cantidad-de-item");
 const precioDeItem = document.querySelector("#precio-de-item");
 const _codigoDeEstado = document.querySelector("#codigo-de-estado")
-const form = document.querySelector("#sumar-form");
+const form = document.querySelector("#impuestos-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
