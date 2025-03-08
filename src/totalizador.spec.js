@@ -67,4 +67,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(100, 300); 
     expect(totalizador.porcentajeDescuento).toEqual(30); 
   });
+
+  it("Debería retornar el impuesto de acuerdo al estado", () => {
+    const totalizador = new Totalizador(20, 3, "TX");
+    expect(totalizador.precioTotal).toEqual(63.75);
+  });
 });
