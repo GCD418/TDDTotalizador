@@ -7,7 +7,11 @@ class Totalizador {
         TX: 6.25,
         AL: 4.0,
         CA: 8.25,
-    }
+    };
+    tasaDescuentos = {
+        1000: 3,
+        3000: 5,
+    };
     constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
@@ -47,9 +51,8 @@ class Totalizador {
     }
 
     get porcentajeDescuento() {
-        if(this.precioTotal >= 3000) 
-            return 5;
-        return 3;
+        return this._descuento ?? this.calcularPorcentajeDescuento();
+
     }
 
     calcularPrecioNeto() {
@@ -61,6 +64,17 @@ class Totalizador {
         this._precioTotal = this.precioNeto + impuestoDolares;
         return this._precioTotal;
     }     
+
+    calcularPorcentajeDescuento() {
+        this._descuento = 0;
+        for (let monto in this.tasaDescuentos) {
+            if (this.precioNeto >= parseInt(monto)) 
+                this._descuento = this.tasaDescuentos[monto];
+            else
+                break;
+        }
+        return this._descuento;
+    }
 }
 
 export default Totalizador;
