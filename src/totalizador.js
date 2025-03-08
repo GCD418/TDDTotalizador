@@ -18,6 +18,7 @@ class Totalizador {
         }
         this._precioNeto = null;
         this._precioTotal = null;
+        this._descuento = null;
       
     }
 
@@ -43,6 +44,10 @@ class Totalizador {
 
     get impuesto() {
         return this.tasaImpuestos[this.codigoDeEstado];
+    }
+
+    get porcentajeDescuento() {
+        return 3;
     }
 
     calcularPrecioNeto() {
