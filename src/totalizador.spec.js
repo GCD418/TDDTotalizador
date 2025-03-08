@@ -47,4 +47,10 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(100, 10); 
     expect(totalizador.porcentajeDescuento).toEqual(3); 
   });
+
+  it("Debería retornar un descuento del 5% cuando el monto total sea mayor a 3000", () => {
+    const totalizador = new Totalizador(100, 30); 
+    expect(totalizador.porcentajeDescuento).toEqual(5); 
+  });
+
 });

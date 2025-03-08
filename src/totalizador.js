@@ -47,6 +47,8 @@ class Totalizador {
     }
 
     get porcentajeDescuento() {
+        if(this.precioTotal >= 3000) 
+            return 5;
         return 3;
     }
 
