@@ -38,4 +38,8 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(20, 3, "NV"); 
     expect(totalizador.precioTotal).toEqual(64.80); 
   });
+  it("Debería retornar el precio total de acuerdo al código de estado con el valor del impuesto según el precio neto y el porcentaje de UT", () => {
+    const totalizador = new Totalizador(20, 3, "UT"); 
+    expect(totalizador.precioTotal).toEqual(63.99); 
+  });
 });
