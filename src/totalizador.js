@@ -17,6 +17,7 @@ class Totalizador {
             this._codigoDeEstado = 'XX';
         }
         this._precioNeto = null;
+        this._precioTotal = null;
       
     }
 
@@ -36,6 +37,10 @@ class Totalizador {
         return this._precioNeto ?? this.calcularPrecioNeto();
     }
 
+    get precioTotal(){
+        return this._precioTotal ?? this.calcularPrecioTotal();
+    }
+
     get impuesto() {
         return this.tasaImpuestos[this.codigoDeEstado];
     }
@@ -44,6 +49,11 @@ class Totalizador {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;
     }
+    calcularPrecioTotal() {
+        const impuestoDolares = this.precioNeto * (this.impuesto / 100);
+        this._precioTotal = this.precioNeto + impuestoDolares;
+        return this._precioTotal;
+    }     
 }
 
 export default Totalizador;
