@@ -72,4 +72,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(20, 3, "TX");
     expect(totalizador.precioTotal).toEqual(63.75);
   });
+
+  it("Debería retornar el precio total con descuento", () => {
+    const totalizador = new Totalizador(10, 30000, "CA");
+    expect(totalizador.precioTotalD).toEqual(234750)
+  })
 });

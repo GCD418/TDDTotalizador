@@ -26,6 +26,7 @@ class Totalizador {
         this._precioNeto = null;
         this._precioTotal = null;
         this._descuento = null;
+        this._precioTotalD = null;
       
     }
 
@@ -55,7 +56,10 @@ class Totalizador {
 
     get porcentajeDescuento() {
         return this._descuento ?? this.calcularPorcentajeDescuento();
+    }
 
+    get precioTotalD() {
+        return this._precioTotalD ?? this.calcularPrecioTotalConDescuento();
     }
 
     calcularPrecioNeto() {
@@ -68,6 +72,13 @@ class Totalizador {
         return this._precioTotal;
     }     
 
+    calcularPrecioTotalConDescuento(){
+        const impuestoDolares = this.precioNeto * (this.impuesto / 100);
+        const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
+        this._precioTotalD = this.precioNeto + impuestoDolares - descuentoDolares;
+        return this._precioTotalD;
+    }
+    
     calcularPorcentajeDescuento() {
         this._descuento = 0;
         for (let monto in this.tasaDescuentos) {
