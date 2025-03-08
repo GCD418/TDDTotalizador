@@ -11,6 +11,7 @@ class Totalizador {
     tasaDescuentos = {
         1000: 3,
         3000: 5,
+        7000: 7,
     };
     constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
         this.cantidadDeItem = cantidadDeItem;
