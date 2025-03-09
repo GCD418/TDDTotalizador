@@ -73,8 +73,9 @@ class Totalizador {
     }     
 
     calcularPrecioTotalConDescuento(){
-        const impuestoDolares = this.precioNeto * (this.impuesto / 100);
         const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
+        const precioConDescuento = this.precioNeto - descuentoDolares;
+        const impuestoDolares = precioConDescuento * (this.impuesto / 100);
         this._precioTotalD = this.precioNeto + impuestoDolares - descuentoDolares;
         return this._precioTotalD;
     }
