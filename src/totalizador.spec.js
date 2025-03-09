@@ -82,4 +82,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 30000, "CA", "bebidas");
     expect(totalizador.impuestoCategoriaProducto).toEqual(7)
   });
+
+  it("Debería calcular correctamente el monto del impuesto adicional", () => {
+    const totalizador = new Totalizador(10, 50, "CA");
+    expect(totalizador.montoImpuesto).toBeCloseTo(41.25);
+  });
 });
