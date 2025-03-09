@@ -1,3 +1,5 @@
+import CategoriaProducto from "./categoriaProducto";
+
 class Totalizador {
 
     //precioNeto = null;
@@ -15,7 +17,7 @@ class Totalizador {
         10000: 10,
         30000: 15,
     };
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
         if (typeof codigoDeEstado === 'string') {
@@ -23,6 +25,7 @@ class Totalizador {
         } else {
             this._codigoDeEstado = 'XX';
         }
+        this._categoriaDeProducto = new CategoriaProducto(categoriaDeProducto);
         this._precioNeto = null;
         this._precioTotal = null;
         this._descuento = null;
@@ -62,6 +65,9 @@ class Totalizador {
         return this._precioTotalD ?? this.calcularPrecioTotalConDescuento();
     }
 
+    get impuestoCategoriaProducto(){
+        return this._categoriaDeProducto["impuesto"];
+    }
     calcularPrecioNeto() {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;

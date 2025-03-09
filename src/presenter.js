@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
     return;
   }*/
 
-  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado);
+  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto);
 
 
   div.innerHTML = `
@@ -28,6 +28,7 @@ form.addEventListener("submit", (event) => {
     <p>Descuento: ${totalizador.porcentajeDescuento}%</p>
     <p>Código de Estado seleccionado: ${totalizador.codigoDeEstado}</p>
     <p>Categoría de producto seleccionada: ${categoriaDeProducto}</p>
+    <p>Impuesto de la categoría de producto: ${totalizador.impuestoCategoriaProducto}%</p>
     <p>Impuesto para ${totalizador.codigoDeEstado} = (%${totalizador.impuesto})</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
     <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>

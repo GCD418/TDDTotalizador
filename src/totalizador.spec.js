@@ -77,4 +77,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 30000, "CA");
     expect(totalizador.precioTotal).toEqual(276037.5)
   })
+
+  it("Deberia retornar el porcentaje de impuesto adicional para la categoria de producto bebidas", () => {
+    const totalizador = new Totalizador(10, 30000, "CA", "bebidas");
+    expect(totalizador.impuestoCategoriaProducto).toEqual(7)
+  });
 });
