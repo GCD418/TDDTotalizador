@@ -67,19 +67,14 @@ class Totalizador {
         return this._precioNeto;
     }
     calcularPrecioTotal() {
-        const impuestoDolares = this.precioNeto * (this.impuesto / 100);
-        this._precioTotal = this.precioNeto + impuestoDolares;
-        return this._precioTotal;
-    }     
-
-    calcularPrecioTotalConDescuento(){
         const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
         const precioConDescuento = this.precioNeto - descuentoDolares;
         const impuestoDolares = precioConDescuento * (this.impuesto / 100);
         this._precioTotalD = this.precioNeto + impuestoDolares - descuentoDolares;
         return this._precioTotalD;
-    }
-    
+
+    }     
+
     calcularPorcentajeDescuento() {
         this._descuento = 0;
         for (let monto in this.tasaDescuentos) {
