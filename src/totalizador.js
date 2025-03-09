@@ -73,6 +73,10 @@ class Totalizador {
         return this.calcularMontoImpuesto(); 
     }
 
+    get precioTotalSoloImpuestos() {
+        return this.calcularPrecioTotalSoloImpuestos();
+    }    
+
     calcularPrecioNeto() {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;
@@ -101,6 +105,12 @@ class Totalizador {
         const subtotal = this.cantidadDeItem * this.precioDeItem; 
         const tasa = this.tasaImpuestos[this._codigoDeEstado] ?? 0; 
         return subtotal * (tasa / 100);
+    }
+
+    calcularPrecioTotalSoloImpuestos() {
+        const impuestoEstado = this.precioNeto * (this.impuesto / 100);
+        const impuestoCategoria = this.precioNeto * (this.impuestoCategoriaProducto / 100);
+        return this.precioNeto + impuestoEstado + impuestoCategoria;
     }
 }
 

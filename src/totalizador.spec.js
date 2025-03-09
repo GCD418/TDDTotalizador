@@ -87,4 +87,10 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 50, "CA");
     expect(totalizador.montoImpuesto).toBeCloseTo(41.25);
   });
+
+  it("Debería calcular correctamente el precio total solo con impuestos (sin descuentos)", () => {
+    const totalizador = new Totalizador(10, 50, "CA", "bebidas"); 
+    expect(totalizador.precioTotalSoloImpuestos).toEqual(576.25);
+  });
+
 });
