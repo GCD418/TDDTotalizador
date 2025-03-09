@@ -63,9 +63,9 @@ describe("Totalizador", () => {
     expect(totalizador.porcentajeDescuento).toEqual(10); 
   });
 
-  it("Debería retornar un descuento del 30% cuando el monto total sea mayor a 30000", () => {
+  it("Debería retornar un descuento del 15% cuando el monto total sea mayor a 30000", () => {
     const totalizador = new Totalizador(100, 300); 
-    expect(totalizador.porcentajeDescuento).toEqual(30); 
+    expect(totalizador.porcentajeDescuento).toEqual(15); 
   });
 
   it("Debería retornar el impuesto de acuerdo al estado", () => {
@@ -75,6 +75,6 @@ describe("Totalizador", () => {
 
   it("Debería retornar el precio total con descuento", () => {
     const totalizador = new Totalizador(10, 30000, "CA");
-    expect(totalizador.precioTotalD).toEqual(234750)
+    expect(totalizador.precioTotalD).toEqual(279750)
   })
 });

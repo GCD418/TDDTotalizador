@@ -13,7 +13,7 @@ class Totalizador {
         3000: 5,
         7000: 7,
         10000: 10,
-        30000: 30,
+        30000: 15,
     };
     constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA") {
         this.cantidadDeItem = cantidadDeItem;
