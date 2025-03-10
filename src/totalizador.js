@@ -134,6 +134,15 @@ class Totalizador {
         const impuestoCategoria = this.precioNeto * (this.impuestoCategoriaProducto / 100);
         return this.precioNeto + impuestoEstado + impuestoCategoria;
     }
+
+    calcularPrecioTotal() {
+        const descuentoCategoria = this.calcularMontoDescuento();
+        const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
+        const precioConDescuento = this.precioNeto - descuentoDolares - descuentoCategoria;
+        const impuestoDolares = precioConDescuento * (this.impuesto / 100);
+        this._precioTotalD = precioConDescuento + impuestoDolares;
+        return this._precioTotalD;
+    }
 }
 
 export default Totalizador;

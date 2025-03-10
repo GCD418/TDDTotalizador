@@ -109,4 +109,8 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 100, "CA", "alimentos");
     expect(totalizador.calcularMontoDescuento()).toEqual(20);
   });
+  it("Debería retornar el precio total con impuestos y descuentos aplicados correctamente para la categoría alimentos", () => {
+    const totalizador = new Totalizador(10, 100, "CA", "alimentos");
+    expect(totalizador.calcularPrecioTotal()).toEqual(1028.375);
+  });
 });
