@@ -123,6 +123,12 @@ class Totalizador {
         return subtotal * (tasa / 100);
     }
 
+    calcularMontoDescuento() {
+        const descuentoCategoria = this._categoriaDeProducto["descuento"] ?? 0;
+        const descuentoEnDolares = this.precioNeto * (descuentoCategoria / 100);
+        return descuentoEnDolares;
+    }
+
     calcularPrecioTotalSoloImpuestos() {
         const impuestoEstado = this.precioNeto * (this.impuesto / 100);
         const impuestoCategoria = this.precioNeto * (this.impuestoCategoriaProducto / 100);

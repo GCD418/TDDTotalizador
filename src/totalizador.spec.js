@@ -105,4 +105,8 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(1, 1, "CA", "alimentos", "recurrente", 38);
     expect(totalizador.costoPesoVolumetrico).toEqual(5);
   });
+  it("Debería retornar el monto de descuento correcto para la categoría alimentos", () => {
+    const totalizador = new Totalizador(10, 100, "CA", "alimentos");
+    expect(totalizador.calcularMontoDescuento()).toEqual(20);
+  });
 });
