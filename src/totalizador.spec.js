@@ -92,4 +92,10 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 50, "CA", "bebidas"); 
     expect(totalizador.precioTotalSoloImpuestos).toEqual(576.25);
   });
+
+  it("Debería retornar el porcentaje de descuento para la categoría de producto alimentos", () => {
+    const totalizador = new Totalizador(10, 30000, "CA", "alimentos");
+    expect(totalizador.descuentoCategoriaProducto).toEqual(2);
+  });
+
 });
