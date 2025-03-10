@@ -1,5 +1,6 @@
 import CategoriaProducto from "./categoriaProducto";
 import TipoUsuario from "./tipoUsuario";
+import PesoVolumetrico from "./pesoVolumetrico";
 
 class Totalizador {
 
@@ -81,7 +82,7 @@ class Totalizador {
 
     get precioTotalSoloImpuestos() {
         return this.calcularPrecioTotalSoloImpuestos();
-    }    
+    }
 
     get descuentoPorUsuario() {
         return this._tipoDeUsuario["descuentoCostoEnvio"]

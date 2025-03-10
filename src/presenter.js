@@ -6,6 +6,7 @@ const _codigoDeEstado = document.querySelector("#codigo-de-estado")
 const form = document.querySelector("#impuestos-form");
 const div = document.querySelector("#resultado-div");
 const _categoriaDeProducto = document.querySelector("#categoria-de-producto");
+const _tipoDeUsuario = document.querySelector("#tipo-usuario");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
