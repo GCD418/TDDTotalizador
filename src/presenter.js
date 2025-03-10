@@ -17,12 +17,13 @@ form.addEventListener("submit", (event) => {
   const codigoDeEstado = _codigoDeEstado.value;
   const categoriaDeProducto = _categoriaDeProducto.value;
   const tipoDeUsuario = _tipoDeUsuario.value;
+  const pesoVolumetrico = Number.parseFloat(_pesoVolumetrico.value);
   /*if (codigoDeEstado === "") {
     alert("Por favor, selecciona un estado.");
     return;
   }*/
 
-  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto, tipoDeUsuario);
+  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto, tipoDeUsuario, pesoVolumetrico);
 
 
   div.innerHTML = `
@@ -38,5 +39,6 @@ form.addEventListener("submit", (event) => {
     <p>Peso Volumétrico: ${_pesoVolumetrico.value} kg</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
     <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>
+    <p>Costo por Peso Volumétrico: \$${totalizador.costoPesoVolumetrico.toFixed(2)}</p> 
 `;
 });

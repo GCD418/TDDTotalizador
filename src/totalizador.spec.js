@@ -101,4 +101,8 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 30000, "CA", "alimentos", "recurrente");
     expect(totalizador.descuentoPorUsuario).toEqual(0.5);
   });
+  it("Debería retornar el costo de envío por peso Volumetrico", () => {
+    const totalizador = new Totalizador(1, 1, "CA", "alimentos", "recurrente", 38);
+    expect(totalizador.costoPesoVolumetrico).toEqual(5);
+  });
 });

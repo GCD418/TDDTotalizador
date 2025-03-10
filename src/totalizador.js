@@ -19,9 +19,10 @@ class Totalizador {
         10000: 10,
         30000: 15,
     };
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario, pesoVol) {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario, pesoVolumetrico) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
+        this.pesoVolumetrico = new PesoVolumetrico(pesoVolumetrico);
         if (typeof codigoDeEstado === 'string') {
             this._codigoDeEstado = codigoDeEstado.toUpperCase().slice(0, 2);
         } else {
@@ -86,6 +87,10 @@ class Totalizador {
 
     get descuentoPorUsuario() {
         return this._tipoDeUsuario["descuentoCostoEnvio"]
+    }
+
+    get costoPesoVolumetrico() {
+        return this.pesoVolumetrico.getCosto();
     }
 
     calcularPrecioNeto() {
