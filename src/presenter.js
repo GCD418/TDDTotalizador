@@ -14,12 +14,13 @@ form.addEventListener("submit", (event) => {
   const precioDeItems = Number.parseInt(precioDeItem.value);
   const codigoDeEstado = _codigoDeEstado.value;
   const categoriaDeProducto = _categoriaDeProducto.value;
+  const tipoDeUsuario = _tipoDeUsuario.value;
   /*if (codigoDeEstado === "") {
     alert("Por favor, selecciona un estado.");
     return;
   }*/
 
-  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto);
+  const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto, tipoDeUsuario);
 
 
   div.innerHTML = `
@@ -30,6 +31,7 @@ form.addEventListener("submit", (event) => {
     <p>Categoría de producto seleccionada: ${categoriaDeProducto}</p>
     <p>Impuesto de la categoría de producto: ${totalizador.impuestoCategoriaProducto}%</p>
     <p>Descuento de la categoría de producto: ${totalizador.descuentoCategoriaProducto}%</p>
+    <p>Descuento del tipo de usuario: ${totalizador.descuentoPorUsuario}%</p>
     <p>Impuesto para ${totalizador.codigoDeEstado} = (%${totalizador.impuesto})</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
     <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>

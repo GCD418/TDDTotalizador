@@ -97,5 +97,4 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 30000, "CA", "alimentos");
     expect(totalizador.descuentoCategoriaProducto).toEqual(2);
   });
-
 });

@@ -1,4 +1,5 @@
 import CategoriaProducto from "./categoriaProducto";
+import TipoUsuario from "./tipoUsuario";
 
 class Totalizador {
 
@@ -17,7 +18,7 @@ class Totalizador {
         10000: 10,
         30000: 15,
     };
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto) {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
         if (typeof codigoDeEstado === 'string') {
@@ -26,6 +27,7 @@ class Totalizador {
             this._codigoDeEstado = 'XX';
         }
         this._categoriaDeProducto = new CategoriaProducto(categoriaDeProducto);
+        this._tipoDeUsuario = new TipoUsuario(tipoDeUsuario);
         this._precioNeto = null;
         this._precioTotal = null;
         this._descuento = null;
