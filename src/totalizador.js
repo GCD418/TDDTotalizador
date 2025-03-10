@@ -83,6 +83,10 @@ class Totalizador {
         return this.calcularPrecioTotalSoloImpuestos();
     }    
 
+    get descuentoPorUsuario() {
+        return this._tipoDeUsuario["descuentoCostoEnvio"]
+    }
+
     calcularPrecioNeto() {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;

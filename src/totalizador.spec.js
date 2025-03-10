@@ -97,4 +97,8 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 30000, "CA", "alimentos");
     expect(totalizador.descuentoCategoriaProducto).toEqual(2);
   });
+  it("Debería retornar el porcentaje de descuento para el usuario recurrente", () => {
+    const totalizador = new Totalizador(10, 30000, "CA", "alimentos", "recurrente");
+    expect(totalizador.descuentoPorUsuario).toEqual(0.5);
+  });
 });
