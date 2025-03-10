@@ -69,6 +69,10 @@ class Totalizador {
         return this._categoriaDeProducto["impuesto"];
     }
 
+    get descuentoCategoriaProducto(){
+        return this._categoriaDeProducto["descuento"]
+    }
+
     get montoImpuesto() {
         return this.calcularMontoImpuesto(); 
     }

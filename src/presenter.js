@@ -29,6 +29,7 @@ form.addEventListener("submit", (event) => {
     <p>Código de Estado seleccionado: ${totalizador.codigoDeEstado}</p>
     <p>Categoría de producto seleccionada: ${categoriaDeProducto}</p>
     <p>Impuesto de la categoría de producto: ${totalizador.impuestoCategoriaProducto}%</p>
+    <p>Descuento de la categoría de producto: ${totalizador.descuentoCategoriaProducto}%</p>
     <p>Impuesto para ${totalizador.codigoDeEstado} = (%${totalizador.impuesto})</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
     <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>
