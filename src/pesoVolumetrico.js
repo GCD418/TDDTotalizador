@@ -1,5 +1,5 @@
 export default class PesoVolumetrico{
-    costosEnvio = [
+    pesosVolumetricos = [
         { min: 0, max: 10, costo: 0},
         { min: 11, max: 20, costo: 3.5},
         { min: 21, max: 40, costo: 5},

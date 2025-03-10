@@ -7,6 +7,7 @@ const form = document.querySelector("#impuestos-form");
 const div = document.querySelector("#resultado-div");
 const _categoriaDeProducto = document.querySelector("#categoria-de-producto");
 const _tipoDeUsuario = document.querySelector("#tipo-usuario");
+const _pesoVolumetrico = document.querySelector("#peso-volumetrico");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -34,6 +35,7 @@ form.addEventListener("submit", (event) => {
     <p>Descuento de la categoría de producto: ${totalizador.descuentoCategoriaProducto}%</p>
     <p>Descuento del tipo de usuario: ${totalizador.descuentoPorUsuario}%</p>
     <p>Impuesto para ${totalizador.codigoDeEstado} = (%${totalizador.impuesto})</p>
+    <p>Peso Volumétrico: ${_pesoVolumetrico.value} kg</p>
     <p>Precio Neto (${totalizador.cantidadDeItems} * \$${totalizador.precioDeItems}): ${totalizador.precioNeto}</p>
     <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>
 `;

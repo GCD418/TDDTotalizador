@@ -19,7 +19,7 @@ class Totalizador {
         10000: 10,
         30000: 15,
     };
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario) {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario, pesoVol) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
         if (typeof codigoDeEstado === 'string') {
