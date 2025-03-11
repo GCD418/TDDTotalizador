@@ -122,7 +122,7 @@ class Totalizador {
     }
 
     calcularCostoDeEnvio() {
-        return (this.costoPesoVolumetrico * this.cantidadDeItem) * (1 - this.descuentoPorUsuario);
+        return (this.costoPesoVolumetrico * this.cantidadDeItem) * (1 - this.descuentoPorUsuario / 100);
     }
 
     calcularMontoImpuestoPorEstado() {
