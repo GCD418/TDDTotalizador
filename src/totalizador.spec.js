@@ -118,4 +118,14 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(10, 100, "CA", "alimentos");
     expect(totalizador.calcularPrecioTotal()).toEqual(1028.375);
   });
+
+  it("Deberia retornar el costo de envío 0 cuando el peso volumetrico es menor o igual a 10", () => {
+    const totalizador = new Totalizador(100, 100, "CA", "alimentos", "recurrente", 10);
+    expect(totalizador.costoDeEnvio).toEqual(0);
+  });
+
+  it("Deberia retornar el costo de envío 115.50 cuando el peso volumetrico es mayor a 11, los ítems son 33 y el cliente es normal", () => {
+    const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
+    expect(totalizador.costoDeEnvio).toEqual(115.50);
+  });
 });

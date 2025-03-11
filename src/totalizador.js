@@ -93,6 +93,10 @@ class Totalizador {
         return this.pesoVolumetrico.getCosto();
     }
 
+    get costoDeEnvio() {
+        return this.calcularCostoDeEnvio();
+    }
+
     calcularPrecioNeto() {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;
@@ -115,6 +119,10 @@ class Totalizador {
                 break;
         }
         return this._descuento;
+    }
+
+    calcularCostoDeEnvio() {
+        return (this.costoPesoVolumetrico * this.cantidadDeItem) * (1 - this.descuentoPorUsuario);
     }
 
     calcularMontoImpuestoPorEstado() {
