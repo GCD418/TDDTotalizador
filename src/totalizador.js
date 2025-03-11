@@ -29,7 +29,9 @@ class Totalizador {
             this._codigoDeEstado = 'XX';
         }
         this._categoriaDeProducto = new CategoriaProducto(categoriaDeProducto);
+        this.categoriaDeProductoLiteral = categoriaDeProducto;
         this._tipoDeUsuario = new TipoUsuario(tipoDeUsuario);
+        this.tipoDeUsuarioLiteral = tipoDeUsuario;
         this._precioNeto = null;
         this._precioTotal = null;
         this._descuento = null;
@@ -145,6 +147,11 @@ class Totalizador {
 
     calcularPrecioTotalSoloImpuestos() {
         return this.calcularPrecioConDescuentos() + this.calcularImpuestosTotales();
+    }
+
+    calcularDescuentoEspecial() {
+        
+        return 0;
     }
 
     calcularPrecioConDescuentos() {

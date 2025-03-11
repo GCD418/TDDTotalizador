@@ -138,4 +138,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
     expect(totalizador.calcularPrecioTotal()).toEqual(794.2275);
   });
+
+  it("Debería retornar 0 cuando el cliente no es especial", () => {
+    const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
+    expect(totalizador.calcularDescuentoEspecial()).toEqual(0);
+  });
 });
