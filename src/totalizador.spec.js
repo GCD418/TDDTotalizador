@@ -153,4 +153,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(50, 190, "CA", "electronicos", "especial", 11);
     expect(totalizador.calcularDescuentoEspecial()).toEqual(200);
   });
+
+  it("Debería retornar todos los descuentos aplicados", () => {
+    const totalizador = new Totalizador(50, 190, "CA", "electronicos", "especial", 11);
+    expect(totalizador.calcularPrecioConDescuentos()).toEqual(8540);
+  });
 });

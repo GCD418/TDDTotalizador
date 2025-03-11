@@ -162,7 +162,7 @@ class Totalizador {
     calcularPrecioConDescuentos() {
         const descuentoCategoria = this.calcularMontoDescuentoPorCategoria();
         const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
-        const precioConDescuento = this.precioNeto - descuentoDolares - descuentoCategoria;
+        const precioConDescuento = this.precioNeto - descuentoDolares - descuentoCategoria - this.calcularDescuentoEspecial();
         return precioConDescuento;
     }
 
