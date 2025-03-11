@@ -6,41 +6,43 @@
   </head>
   <body>
     <h1>Totalizador</h1>
-    <form id="impuestos-form">
-      <label for="cantidad-de-item">Cantidad de item:</label>
-      <input type="number" id="cantidad-de-item" />
-      <label for="precio-de-item">Precio de item:</label>
-      <input type="number" id="precio-de-item" />
-      <label for="codigo-de-estado">Selecciona un estado:</label>
-      <select id="codigo-de-estado" required>
-        <option value="CA">California</option>
-        <option value="NV">Nevada</option>
-        <option value="TX">Texas</option>
-        <option value="AL">Alabama</option>
-        <option value="UT">Utah</option>
-      </select>
-      <label for="categoria-de-producto">Selecciona la categoria de tus productos:</label>
-      <select id="categoria-de-producto" required>
-        <option value="varios">Varios</option>
-        <option value="alimentos">Alimentos</option>
-        <option value="bebidas">Bebidas alcohólicas</option>
-        <option value="material">Material de escritorio</option>
-        <option value="muebles">Muebles</option>
-        <option value="electronicos">Electrónicos</option>
-        <option value="vestimenta">Vestimenta</option>
-      </select>
-      <label for="tipo-usuario">Selecciona el tipo de usuario que eres:</label>
-      <select id="tipo-usuario" required>
-        <option value="normal">Normal</option>
-        <option value="recurrente">Recurrente</option>
-        <option value="antiguo-recurrente">Antiguo recurrente</option>
-        <option value="especial">Especial</option>
-      </select>
-      <label for="peso-volumetrico">Peso volumétrico:</label>
-      <input type="number" id="peso-volumetrico" />
-      <input type="submit" value="Totalizar" id="totalizar-button" />
-    </form>
-    <div id="resultado-div"></div>
+    <div id="cuerpo">
+      <form id="impuestos-form">
+        <label for="cantidad-de-item">Cantidad de item:</label>
+        <input type="number" id="cantidad-de-item" />
+        <label for="precio-de-item">Precio de item:</label>
+        <input type="number" id="precio-de-item" />
+        <label for="codigo-de-estado">Selecciona un estado:</label>
+        <select id="codigo-de-estado" required>
+          <option value="CA">California</option>
+          <option value="NV">Nevada</option>
+          <option value="TX">Texas</option>
+          <option value="AL">Alabama</option>
+          <option value="UT">Utah</option>
+        </select>
+        <label for="categoria-de-producto">Selecciona la categoria de tus productos:</label>
+        <select id="categoria-de-producto" required>
+          <option value="varios">Varios</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="bebidas">Bebidas alcohólicas</option>
+          <option value="material">Material de escritorio</option>
+          <option value="muebles">Muebles</option>
+          <option value="electronicos">Electrónicos</option>
+          <option value="vestimenta">Vestimenta</option>
+        </select>
+        <label for="tipo-usuario">Selecciona el tipo de usuario que eres:</label>
+        <select id="tipo-usuario" required>
+          <option value="normal">Normal</option>
+          <option value="recurrente">Recurrente</option>
+          <option value="antiguo-recurrente">Antiguo recurrente</option>
+          <option value="especial">Especial</option>
+        </select>
+        <label for="peso-volumetrico">Peso volumétrico:</label>
+        <input type="number" id="peso-volumetrico" />
+        <input type="submit" value="Totalizar" id="totalizar-button" />
+      </form>
+      <div id="resultado-div"></div>
+    </div>
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
