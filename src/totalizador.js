@@ -22,7 +22,7 @@ class Totalizador {
     constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario, pesoVolumetrico) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
-        this.pesoVolumetrico = new PesoVolumetrico(pesoVolumetrico * cantidadDeItem);
+        this.pesoVolumetrico = new PesoVolumetrico(pesoVolumetrico);
         if (typeof codigoDeEstado === 'string') {
             this._codigoDeEstado = codigoDeEstado.toUpperCase().slice(0, 2);
         } else {
