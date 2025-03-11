@@ -12,6 +12,19 @@ const _pesoVolumetrico = document.querySelector("#peso-volumetrico");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   
+  if (!cantidadDeItem.value) {
+    alert("Por favor, ingrese la cantidad de items");
+    return;
+  }
+  if (!precioDeItem.value) {
+    alert("Por favor, ingrese el precio");
+    return;
+  }
+  if (!_pesoVolumetrico.value) {
+    alert("Por favor, ingrese el peso volumétrico");
+    return;
+  }
+
   const cantidadDeItems = Number.parseInt(cantidadDeItem.value);
   const precioDeItems = Number.parseInt(precioDeItem.value);
   const codigoDeEstado = _codigoDeEstado.value;
