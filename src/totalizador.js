@@ -62,7 +62,7 @@ class Totalizador {
     }
 
     get porcentajeDescuento() {
-        return this._descuento ?? this.calcularPorcentajeDescuento();
+        return this._descuento ?? this.calcularPorcentajeDescuentoPorCantidad();
     }
 
     get precioTotalD() {
@@ -78,7 +78,7 @@ class Totalizador {
     }
 
     get montoImpuesto() {
-        return this.calcularMontoImpuesto(); 
+        return this.calcularMontoImpuestoPorEstado(); 
     }
 
     get precioTotalSoloImpuestos() {
@@ -106,7 +106,7 @@ class Totalizador {
 
     }     
 
-    calcularPorcentajeDescuento() {
+    calcularPorcentajeDescuentoPorCantidad() {
         this._descuento = 0;
         for (let monto in this.tasaDescuentos) {
             if (this.precioNeto >= parseInt(monto)) 
@@ -117,13 +117,13 @@ class Totalizador {
         return this._descuento;
     }
 
-    calcularMontoImpuesto() {
+    calcularMontoImpuestoPorEstado() {
         const subtotal = this.cantidadDeItem * this.precioDeItem; 
         const tasa = this.tasaImpuestos[this._codigoDeEstado] ?? 0; 
         return subtotal * (tasa / 100);
     }
 
-    calcularMontoDescuento() {
+    calcularMontoDescuentoPorCategoria() {
         const descuentoCategoria = this._categoriaDeProducto["descuento"] ?? 0;
         const descuentoEnDolares = this.precioNeto * (descuentoCategoria / 100);
         return descuentoEnDolares;
@@ -136,7 +136,7 @@ class Totalizador {
     }
 
     calcularPrecioTotal() {
-        const descuentoCategoria = this.calcularMontoDescuento();
+        const descuentoCategoria = this.calcularMontoDescuentoPorCategoria();
         const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
         const precioConDescuento = this.precioNeto - descuentoDolares - descuentoCategoria;
         const impuestoDolares = precioConDescuento * (this.impuesto / 100);
