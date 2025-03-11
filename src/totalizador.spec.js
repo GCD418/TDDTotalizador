@@ -128,4 +128,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
     expect(totalizador.costoDeEnvio).toEqual(115.50);
   });
+
+  it("Deberia retornar el costo de envío 115.50 cuando el peso volumetrico es mayor a 11, los ítems son 33 y el cliente es normal", () => {
+    const totalizador = new Totalizador(33, 19, "CA", "varios", "antiguorecurrente", 11);
+    expect(totalizador.costoDeEnvio).toEqual(114.345);
+  });
 });
