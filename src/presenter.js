@@ -18,13 +18,21 @@ form.addEventListener("submit", (event) => {
   const categoriaDeProducto = _categoriaDeProducto.value;
   const tipoDeUsuario = _tipoDeUsuario.value;
   const pesoVolumetrico = Number.parseFloat(_pesoVolumetrico.value);
-  /*if (codigoDeEstado === "") {
-    alert("Por favor, selecciona un estado.");
+
+  if (cantidadDeItems < 0) {
+    alert("La cantidad de items no puede ser negativa");
     return;
-  }*/
+  }
+  if (precioDeItems < 0) {
+    alert("El precio no puede ser negativo");
+    return;
+  }
+  if (pesoVolumetrico < 0) {
+    alert("El peso volumétrico no puede ser negativo");
+    return;
+  }
 
   const totalizador = new Totalizador(cantidadDeItems, precioDeItems,  codigoDeEstado, categoriaDeProducto, tipoDeUsuario, pesoVolumetrico);
-
 
   div.innerHTML = `
     <p>Cantidad: ${totalizador.cantidadDeItems}</p>
