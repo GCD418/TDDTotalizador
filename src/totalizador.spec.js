@@ -26,6 +26,11 @@ describe("Totalizador", () => {
     expect(totalizador.impuesto).toEqual(6.65);
   });
 
+  it("Debería retornar el impuesto de acuerdo al código de estado", () => {
+    const totalizador = new Totalizador(3, 100, "NV");
+    expect(totalizador.impuesto).toEqual(8.0);
+  });
+
   it("Debería retornar el precio total de acuerdo al código de estado con el valor del impuesto según el precio neto y el porcentaje de Ca", () => {
     const totalizador = new Totalizador(20, 3, "CA");
     expect(totalizador.precioTotal).toEqual(64.95);
