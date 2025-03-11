@@ -39,6 +39,7 @@ form.addEventListener("submit", (event) => {
     <p>Descuento del tipo de usuario: ${totalizador.descuentoPorUsuario}%</p>
     <p>Peso Volumétrico: ${_pesoVolumetrico.value} kg = ${totalizador.costoPesoVolumetrico.toFixed(2)}\$ por unidad</p>
     <p>Costo de envío por peso volumétrico: \$${totalizador.costoDeEnvio.toFixed(2)}</p>
-    <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>
+    <p>Precio Total(Con impuesto únicamente): \$${totalizador.calcularPrecioTotalSoloImpuestos().toFixed(2)}</p>
+    <p>Precio Total: \$${totalizador.calcularPrecioTotal().toFixed(2)}</p>
 `;
 });

@@ -19,7 +19,7 @@ class Totalizador {
         10000: 10,
         30000: 15,
     };
-    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto, tipoDeUsuario, pesoVolumetrico) {
+    constructor(cantidadDeItem, precioDeItem, codigoDeEstado = "CA", categoriaDeProducto = "varios", tipoDeUsuario = "normal", pesoVolumetrico = 0) {
         this.cantidadDeItem = cantidadDeItem;
         this.precioDeItem = precioDeItem;
         this.pesoVolumetrico = new PesoVolumetrico(pesoVolumetrico);
@@ -101,14 +101,14 @@ class Totalizador {
         this._precioNeto = this.cantidadDeItem * this.precioDeItem;
         return this._precioNeto;
     }
-    calcularPrecioTotal() {
-        const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
-        const precioConDescuento = this.precioNeto - descuentoDolares;
-        const impuestoDolares = precioConDescuento * (this.impuesto / 100);
-        this._precioTotalD = this.precioNeto + impuestoDolares - descuentoDolares;
-        return this._precioTotalD;
+    // calcularPrecioTotal() {
+    //     const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
+    //     const precioConDescuento = this.precioNeto - descuentoDolares;
+    //     const impuestoDolares = precioConDescuento * (this.impuesto / 100);
+    //     this._precioTotalD = this.precioNeto + impuestoDolares - descuentoDolares;
+    //     return this._precioTotalD;
 
-    }     
+    // }     
 
     calcularPorcentajeDescuentoPorCantidad() {
         this._descuento = 0;
@@ -140,7 +140,7 @@ class Totalizador {
     calcularImpuestosTotales(){
         const impuestoEstado = this.calcularPrecioConDescuentos() * (this.impuesto / 100);
         const impuestoCategoria = this.calcularPrecioConDescuentos() * (this.impuestoCategoriaProducto / 100);
-        return impuestoEstado + impuestoCategoria;
+        return (impuestoEstado + impuestoCategoria);
     }
 
     calcularPrecioTotalSoloImpuestos() {
@@ -155,9 +155,8 @@ class Totalizador {
     }
 
     calcularPrecioTotal() {
-        const precioConDescuentos = this.calcularPrecioConDescuentos();
-        const impuestoDolares = precioConDescuentos * (this.impuesto / 100);
-        this._precioTotalD = precioConDescuentos + impuestoDolares;
+        const impuestoDolares = this.calcularPrecioTotalSoloImpuestos();
+        this._precioTotalD = impuestoDolares + this.calcularCostoDeEnvio();
         return this._precioTotalD;
     }
 }

@@ -133,4 +133,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(33, 19, "CA", "varios", "antiguorecurrente", 11);
     expect(totalizador.costoDeEnvio).toEqual(114.345);
   });
+
+  it("Deberia retornar el costo el costo total", () => {
+    const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
+    expect(totalizador.calcularPrecioTotal()).toEqual(794.2275);
+  });
 });
