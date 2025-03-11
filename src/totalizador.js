@@ -135,12 +135,17 @@ class Totalizador {
         return this.precioNeto + impuestoEstado + impuestoCategoria;
     }
 
-    calcularPrecioTotal() {
+    calcularPrecioConDescuentos() {
         const descuentoCategoria = this.calcularMontoDescuentoPorCategoria();
         const descuentoDolares = this.precioNeto * (this.porcentajeDescuento / 100);
         const precioConDescuento = this.precioNeto - descuentoDolares - descuentoCategoria;
-        const impuestoDolares = precioConDescuento * (this.impuesto / 100);
-        this._precioTotalD = precioConDescuento + impuestoDolares;
+        return precioConDescuento;
+    }
+
+    calcularPrecioTotal() {
+        const precioConDescuentos = this.calcularPrecioConDescuentos();
+        const impuestoDolares = precioConDescuentos * (this.impuesto / 100);
+        this._precioTotalD = precioConDescuentos + impuestoDolares;
         return this._precioTotalD;
     }
 }
