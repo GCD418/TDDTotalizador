@@ -66,7 +66,7 @@ class Totalizador {
     }
 
     get precioTotalD() {
-        return this._precioTotalD ?? this.calcularPrecioTotalConDescuento();
+        return this._precioTotalD ?? this.calcularPrecioConDescuentos();
     }
 
     get impuestoCategoriaProducto(){
