@@ -143,4 +143,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(33, 19, "CA", "varios", "normal", 11);
     expect(totalizador.calcularDescuentoEspecial()).toEqual(0);
   });
+
+  it("Debería retornar 100 cuando el cliente es recurrente", () => {
+    const totalizador = new Totalizador(33, 190, "CA", "alimentos", "recurrente", 11);
+    expect(totalizador.calcularDescuentoEspecial()).toEqual(100);
+  });
 });

@@ -150,7 +150,9 @@ class Totalizador {
     }
 
     calcularDescuentoEspecial() {
-        
+        if(this.tipoDeUsuarioLiteral === "recurrente" && this.precioNeto > 3000 && this.categoriaDeProductoLiteral === "alimentos") {
+            return 100;
+        }
         return 0;
     }
 
