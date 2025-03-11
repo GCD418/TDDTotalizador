@@ -148,4 +148,9 @@ describe("Totalizador", () => {
     const totalizador = new Totalizador(33, 190, "CA", "alimentos", "recurrente", 11);
     expect(totalizador.calcularDescuentoEspecial()).toEqual(100);
   });
+
+  it("Debería retornar 200 cuando el cliente es especial", () => {
+    const totalizador = new Totalizador(50, 190, "CA", "electronicos", "especial", 11);
+    expect(totalizador.calcularDescuentoEspecial()).toEqual(200);
+  });
 });

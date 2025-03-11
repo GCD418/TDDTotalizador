@@ -153,6 +153,9 @@ class Totalizador {
         if(this.tipoDeUsuarioLiteral === "recurrente" && this.precioNeto > 3000 && this.categoriaDeProductoLiteral === "alimentos") {
             return 100;
         }
+        if(this.tipoDeUsuarioLiteral === "especial" && this.precioNeto > 7000 && this.categoriaDeProductoLiteral === "electronicos") {
+            return 200;
+        }
         return 0;
     }
 
